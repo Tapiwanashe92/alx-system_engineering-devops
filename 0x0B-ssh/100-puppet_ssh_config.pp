@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
-# connect to a server Execute a command
+# using puppet to make changes to our configuration file
 
-exec { 'echo "PasswordAuthentication no\nIdentityFile ~/.ssh/school" >> /etc/ssh/ssh_config':
-        path    => '/bin/'
+file { 'etc/ssh/ssh_config':
+	ensure => present,
+
+content =>"
+
+	#SSH client configuration
+	host*
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
+
 }
