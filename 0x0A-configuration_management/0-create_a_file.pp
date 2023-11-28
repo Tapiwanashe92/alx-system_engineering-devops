@@ -1,7 +1,7 @@
-# Creates a file in /tmp.
+# Creates a file name school in /tmp.
 
-file { 'school':
-  name    => '/tmp/school',
+file { '/tmp/school':
+  ensure  => file,
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',
